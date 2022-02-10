@@ -163,44 +163,35 @@ header h3 {
 nav {
   /* position: sticky;
   top: 10px; */
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
+
   background-color: #0c08305b;
   width: 120px;
   height: 200px;
   border-radius: 0px 5px 5px 0px;
 }
-nav ul {
+.nav-items {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding-left: 10px;
   color: white;
 }
-nav li {
+.nav-items li {
   font-size: 20px;
   padding: 5px 0;
 }
-nav li:hover {
+.nav-items li:hover {
   text-shadow: -2px 2px 4px rgba(158, 196, 219, 0.856);
 }
-nav li a {
+.nav-items li a {
   color: inherit;
   text-decoration: none;
 }
-nav li a:visited {
+.nav-items li a:visited {
   color: inherit;
 }
-nav li a:active {
+.nav-items li a:active {
   color: #3b28cc;
-}
-nav div {
-  padding: 10px 5px 10px 10px;
-  background-color: black;
-  margin-top: auto;
-  border-radius: 0 0 10px 0;
-}
-nav div a:first-of-type {
-  padding-right: 5px;
 }
 
 .resume {
@@ -208,7 +199,7 @@ nav div a:first-of-type {
   /* position: sticky;
   top: 10px; */
   /* align-self: stretch; */
-  margin-left: 10px;
+  margin: 0 0 0 10px;
   padding: 20px;
   width: 800px;
   /* min-height: 800px; */
@@ -329,4 +320,65 @@ footer {
   /* align-self: flex-end; */
   margin-top: auto;
   background-color: black;
+}
+
+@media (max-width: 940px) {
+  header {
+    width: calc(100vw - 10px);
+    max-height: fit-content;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding-left: 57px;
+    border-radius: 0 5px 0 0;
+  }
+  .name-title {
+    padding: 0;
+  }
+  .vl {
+    border-right: none;
+    border-bottom: 1px solid rgba(158, 196, 219, 0.466);
+  }
+  .subtitle {
+    flex-wrap: wrap;
+  }
+  .panel {
+    flex-direction: column;
+    height: calc(100vh - 265px);
+    padding-bottom: 10px;
+  }
+  nav {
+    display: flex;
+    width: calc(100vw - 10px);
+    height: fit-content;
+    border-radius: 0 0 5px 0;
+    border-top: 1px solid rgba(158, 196, 219, 0.466);
+    margin-bottom: 10px;
+  }
+  .nav-items {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .logo {
+    position: static;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .resume {
+    width: calc(100vw - 20px);
+  }
+}
+@media (max-width: 500px) {
+  .name-title h1 {
+    font-size: 40px;
+  }
+  .panel {
+    height: calc(100vh - 242px);
+  }
 }

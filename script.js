@@ -55,3 +55,19 @@ document.querySelector(".resume").addEventListener("mouseenter", (e) => {
 document.querySelector(".resume").addEventListener("mouseleave", (e) => {
     document.querySelector("main").style.setProperty("--main-bg-opacity", 1);
 });
+
+//TODO - refactor fadein into its own func
+document.querySelector(".nav-resume").addEventListener("click", (e) => {
+    e.preventDefault();
+    const resumeDisp = document.querySelector(".resume").style.display;
+    if (resumeDisp === "" || resumeDisp === "none") {
+        document.querySelector(".resume").style.animation = "fade-in 1s";
+        document.querySelector(".resume").style.display = "block";
+    } else {
+        document.querySelector(".resume").style.animation = "fade-out 1s";
+        setTimeout(
+            () => (document.querySelector(".resume").style.display = "none"),
+            1000
+        );
+    }
+});

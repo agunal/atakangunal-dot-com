@@ -193,9 +193,12 @@ nav {
 .nav-items li a:active {
   color: #3b28cc;
 }
+.nav-resume {
+  cursor: pointer;
+}
 
 .resume {
-  /* display: none; */
+  display: none;
   /* position: sticky;
   top: 10px; */
   /* align-self: stretch; */
@@ -211,6 +214,8 @@ nav {
   border-radius: 10px;
   scrollbar-width: none;
   color: #333;
+
+  transition: display 1s;
 }
 .resume::-webkit-scrollbar {
   display: none;
@@ -322,6 +327,41 @@ footer {
   background-color: black;
 }
 
+/* @-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+} */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 940px) {
   header {
     width: calc(100vw - 10px);
@@ -380,5 +420,8 @@ footer {
   }
   .panel {
     height: calc(100vh - 242px);
+  }
+  .resume {
+    padding: 10px;
   }
 }

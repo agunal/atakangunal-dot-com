@@ -11,11 +11,11 @@
   <body>
     <main>
       <header>
-        <img src="images/favicon.ico" alt="logo" />
         <div class="name-title">
           <h1>Atakan&nbsp;Gunal</h1>
         </div>
-        <div class="available">
+        <div class="vl"></div>
+        <div class="subtitle">
           <h2>Software&nbsp;Engineer</h2>
           <h3>Based in Los&nbsp;Angeles,&nbsp;CA</h3>
           <h3>Remotely available anywhere</h3>
@@ -23,38 +23,21 @@
       </header>
       <div class="panel">
         <nav>
+          <a href="#" class="logo">
+            <img src="images/favicon.ico" alt="logo" class="logo-img" />
+          </a>
           <ul class="nav-items">
             <li>day/night</li>
             <li><a href="#" class="nav-resume">resume</a></li>
             <li>contact</li>
           </ul>
-          <div>
-            <a href="#">
-              <img
-                style="width: 30px"
-                src="images/In-Blue-Logo.png.original.png"
-                alt="linkedin" />
-            </a>
-            <a href="#">
-              <img
-                style="width: 30px"
-                src="images/GitHub-Mark-Light-120px-plus.png"
-                alt="github" />
-            </a>
-            <a href="#">
-              <img
-                style="width: 30px"
-                src="images/Stack_Overflow_icon_480px.png"
-                alt="stack overflow" />
-            </a>
-          </div>
         </nav>
         <article id="resume" class="resume">
-          <h2 class="headline">
+          <h1 class="headline">
             Resume
             <a href="#resume" class="headline-link">#</a>
-          </h2>
-          <h3>TL;DR</h3>
+          </h1>
+          <h2 class="headline">TL;DR</h2>
           <p>
             "Full-stack" developer specializing in
             <strong>Java&nbsp;+&nbsp;Spring</strong> on the back end,
@@ -65,42 +48,45 @@
             versed in System&nbsp;Design, Patterns, and Agile best practices
           </p>
 
-          <section>
-            <h3 id="work-experience" class="headline">
+          <section class="work-experience">
+            <h2 id="work-experience" class="headline work-experience-headline">
               Work Experience
               <a href="#work-experience" class="headline-link">#</a>
-            </h3>
+            </h2>
             <p>
               Compacted and ordered for relevance. See a comprehensive,
               chronological list on
               <a href="#" class="regular-link">LinkedIn</a>.
             </p>
-            <section>
-              <div>
-                <h4 id="work-1" class="headline">
-                  Software&nbsp;Engineer
-                  <a href="#work-1" class="headline-link">#</a>
-                </h4>
-                <p>Impact - Partnership Automation SaaS</p>
-                <p>Santa&nbsp;Barbara</p>
-                <p>Feb 2018 - Mar 2021</p>
+            <hr />
+            <section class="work-item">
+              <div class="work-info">
+                <div class="work-title-company">
+                  <h3 id="work-1" class="headline work-title">
+                    Software&nbsp;Engineer
+                    <a href="#work-1" class="headline-link">#</a>
+                  </h3>
+                  <p class="work-company">
+                    <b>Impact</b> - Partnership Automation SaaS
+                  </p>
+                </div>
+                <div class="work-date-location">
+                  <p class="work-date">Feb 2018 - Mar 2021</p>
+                  <p class="work-location">Santa&nbsp;Barbara</p>
+                </div>
               </div>
-              <div>
-                <p>
-                  Back-end development using
+              <div class="work-details">
+                <p class="work-summary">
+                  <strong>Back-end</strong> development using
                   <strong>Java</strong> with
                   <strong
                     >Spring, Spring&nbsp;Boot, Hibernate, Redis, MySQL</strong
                   >
                 </p>
-                <ul>
+                <ul class="work-task-list">
                   <li>
                     Worked on web services that track and process millions of
                     events per day
-                  </li>
-                  <li>
-                    Maintained and added features to existing APIs, as well as
-                    creating new ones
                   </li>
                   <li class="commentary-item">
                     <a href="">
@@ -120,60 +106,66 @@
                   </p>
 
                   <li>
-                    Deployed and maintained applications in GCP and on-prem
-                    servers
+                    Deployed and maintained applications on
+                    <strong>GCP</strong> and on-prem servers
                   </li>
                   <li>
                     Developed Android clients to demonstrate the use of various
                     APIs and deep linking
                   </li>
                   <li>
-                    Worked on compliance issues related to changing industry
-                    standards and regulations such as GDPR, ITP
+                    Worked on compliance issues related to industry standards
+                    and regulations such as GDPR, ITP
                   </li>
                 </ul>
               </div>
             </section>
 
-            <section>
-              <div>
-                <h4 id="work-2" class="headline">
-                  Software&nbsp;Engineer
-                  <a href="#work-2" class="headline-link">#</a>
-                </h4>
-                <p>SESTEK - Speech Enabled Software Technologies</p>
-                <p>Istanbul</p>
-                <p>Sep 2013 - Aug 2015</p>
+            <section class="work-item">
+              <div class="work-info">
+                <div class="work-title-company">
+                  <h3 id="work-2" class="headline work-title">
+                    Software&nbsp;Engineer
+                    <a href="#work-2" class="headline-link">#</a>
+                  </h3>
+                  <p class="work-company">
+                    <b>SESTEK</b> - Speech Enabled Software Technologies
+                  </p>
+                </div>
+                <div class="work-date-location">
+                  <p class="work-date">Sep 2013 - Aug 2015</p>
+                  <p class="work-location">Istanbul</p>
+                </div>
               </div>
-              <div>
-                <p>
-                  Back-end development using
+              <div class="work-details">
+                <p class="work-summary">
+                  <strong>Back-end</strong> development using
                   <strong>C++</strong>, mobile development for Android in
                   <strong>Java</strong>
                 </p>
-                <ul>
+                <ul class="work-task-list">
                   <li>
                     Developed and maintained an Android app for a social media
                     analysis product
                   </li>
                   <li>
-                    Integrated Kaldi speech recognition engine and Opus codec to
-                    the SESTEK SR libraries, improving accuracy and performance
+                    Integrated Kaldi SR engine and Opus codec to the SESTEK SR
+                    libraries, improving accuracy and performance
                   </li>
                   <li>
                     Initiated and implemented a switch to Intel optimized C++
-                    compilers for 20% performance increase across the board
+                    compilers for 20% performance increase
                   </li>
                   <li>
                     Updated and maintained a C++ library for converting SRGS to
                     FSG using JavaScript
                   </li>
                   <li>
-                    Developed basic Android clients for various products using
-                    JNI wrappers and kSOAP
+                    Written Java wrappers for various C++ libraries using JNI
                   </li>
                   <li>
-                    Written Java wrappers for various C++ libraries using JNI
+                    Developed basic Android clients for various products using
+                    JNI wrappers and kSOAP
                   </li>
                   <li>
                     Developed an Android app for collecting audio recordings and
@@ -183,25 +175,34 @@
               </div>
             </section>
 
-            <section>
-              <div>
-                <h4 id="work-3" class="headline">
-                  Software&nbsp;Engineer Intern
-                  <a href="#work-3" class="headline-link">#</a>
-                </h4>
-                <p>AppFolio - Property Management SaaS</p>
-                <p>Santa&nbsp;Barbara</p>
-                <p>Jun 2016 - Sep 2016</p>
+            <section class="work-item">
+              <div class="work-info">
+                <div class="work-title-company">
+                  <h3 id="work-3" class="headline work-title">
+                    Software&nbsp;Engineer Intern
+                    <a href="#work-3" class="headline-link">#</a>
+                  </h3>
+                  <p class="work-company">
+                    <b>AppFolio</b> - Property Management SaaS
+                  </p>
+                </div>
+                <div class="work-date-location">
+                  <p class="work-date">Jun 2016 - Sep 2016</p>
+                  <p class="work-location">Santa&nbsp;Barbara</p>
+                </div>
               </div>
-              <div>
-                <p>
-                  Co-developed a map-based listings web app in an agile pair
-                  programming setting
+              <div class="work-details">
+                <p class="work-summary">
+                  <strong>Full-stack</strong> development using
+                  <strong
+                    >Ruby on Rails, Praxis, MongoDB + JS, React, Redux,
+                    Mapbox</strong
+                  >
                 </p>
-                <ul>
+                <ul class="work-task-list">
                   <li>
-                    Full-stack web development using Ruby on Rails, Praxis,
-                    MongoDB for back end; JS, React, Redux, Mapbox for front end
+                    Co-developed a map-based listings web app in an agile pair
+                    programming setting
                   </li>
                   <li>
                     Generated know-how using frameworks and APIs new to the
@@ -217,37 +218,42 @@
           </section>
 
           <section id="education" class="education">
-            <h3 class="headline">
+            <h2 class="headline education-headline">
               Education
               <a href="#education" class="headline-link">#</a>
-            </h3>
-            <p class="commentary">
-              Years of moving back and forth across the Atlantic, in pursuit of
-              forging my own curriculum, made for an unorthodox timeline.
+            </h2>
+            <p class="">
+              Years of moving across the Atlantic, in pursuit of forging my own
+              curriculum, made for an unorthodox timeline.
             </p>
+            <hr />
             <section>
-              <h4>
+              <h3 class="education-school">
                 University of California, Santa&nbsp;Barbara -
                 Santa&nbsp;Barbara
-              </h4>
-              <p>
+              </h3>
+              <p class="education-type">
                 Master of Science, Media Arts and Technology, 2015-2018
                 (dropout)
               </p>
             </section>
             <section>
-              <h4>Koç University - Istanbul</h4>
-              <p>Bachelor of Science, Computer Engineering, 2014</p>
+              <h3 class="education-school">Koç University - Istanbul</h3>
+              <p class="education-type">
+                Bachelor of Science, Computer Engineering, 2014
+              </p>
             </section>
             <section>
-              <h4>Simon Fraser University - Vancouver</h4>
-              <p>Extended Minor in Music, 2009-2012</p>
+              <h3 class="education-school">
+                Simon Fraser University - Vancouver
+              </h3>
+              <p class="education-type">Extended Minor in Music, 2009-2012</p>
             </section>
             <section>
-              <h4>
+              <h3 class="education-school">
                 University of California, Los&nbsp;Angeles, Los&nbsp;Angeles
-              </h4>
-              <p>
+              </h3>
+              <p class="education-type">
                 Summer Sessions: theoretical computer science and cognitive
                 psychology, 2009
               </p>

@@ -126,7 +126,7 @@ document.querySelector(".nav-resume").addEventListener("click", (e) => {
             document.querySelector(".resume").style.display = "none";
             document
                 .querySelector("main")
-                .style.setProperty("--height-offset", "0px");
+                .style.setProperty("--main-height-offset", "0px");
             document
                 .querySelector("main")
                 .style.setProperty("--panel-height-offset", "0px");

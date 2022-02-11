@@ -23,7 +23,6 @@ hr {
 a.regular-link {
   color: #3b28cc;
   text-decoration: none;
-  /* font-weight: 600; */
 }
 
 body {
@@ -68,8 +67,6 @@ main::before {
 }
 
 header {
-  /* visibility: collapse; */
-
   background-color: #0c08305b;
   display: flex;
   flex-direction: row;
@@ -92,8 +89,6 @@ header h3 {
   flex-basis: content;
   align-self: center;
   padding-left: 20px;
-  /* margin: 20px; */
-  /* width: 50%; */
 }
 .name-title h1 {
   /* font-family: "Arial Narrow", Arial, sans-serif; */
@@ -104,10 +99,8 @@ header h3 {
   font-variant: normal;
   font-weight: 700;
   line-height: 1;
-  /* line-height: 23px; */
   color: white;
   margin: 0;
-  /* padding-right: 20px; */
 }
 .vl {
   border-right: 1px solid rgba(158, 196, 219, 0.466);
@@ -116,11 +109,9 @@ header h3 {
 .subtitle {
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
   justify-content: center;
   color: white;
   text-align: center;
-  /* padding-right: 10px; */
 }
 .subtitle h2 {
   padding: 0;
@@ -205,13 +196,9 @@ nav {
 
 .resume {
   display: none;
-  /* position: sticky;
-  top: 10px; */
-  /* align-self: stretch; */
   margin: 0 0 0 10px;
   padding: 20px;
   width: 800px;
-  /* min-height: 800px; */
   height: calc(100% - 20px);
   overflow: scroll;
   scroll-behavior: smooth;

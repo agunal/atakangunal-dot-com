@@ -59,28 +59,56 @@ document.querySelectorAll(".headline").forEach((h) => {
     });
 });
 
-// TODO - change opacity when resume is displayed
-// document.querySelector(".resume").addEventListener("mouseenter", (e) => {
-//     document.querySelector("main").style.setProperty("--main-bg-opacity", 0.9);
-// });
-// document.querySelector(".resume").addEventListener("mouseleave", (e) => {
-//     document.querySelector("main").style.setProperty("--main-bg-opacity", 1);
-// });
-
 //TODO - refactor
 document.querySelector(".nav-resume").addEventListener("click", (e) => {
     e.preventDefault();
+    const screen = window
+        .getComputedStyle(document.body)
+        .getPropertyValue("--screen-size");
+
+    let mainHeightOffset = "",
+        panelHeightOffset = "",
+        navTop = "",
+        scrollAmount = 0;
+
+    switch (screen) {
+        case " big":
+            mainHeightOffset = "130px";
+            panelHeightOffset = "130px";
+            navTop = "130px";
+            scrollAmount = 130;
+            break;
+        case " mid":
+            mainHeightOffset = "210px";
+            panelHeightOffset = "210px";
+            navTop = "0px";
+            scrollAmount = 210;
+            break;
+        case " small":
+            mainHeightOffset = "187px";
+            panelHeightOffset = "187px";
+            navTop = "0px";
+            scrollAmount = 210;
+            break;
+
+        default:
+            break;
+    }
 
     const resumeDisp = document.querySelector(".resume").style.display;
     if (resumeDisp === "" || resumeDisp === "none") {
+        document.querySelector("nav").style.top = navTop;
         document
             .querySelector("main")
             .style.setProperty("--main-bg-opacity", 0.9);
         document
             .querySelector("main")
-            .style.setProperty("--height-offset", "130px");
+            .style.setProperty("--main-height-offset", mainHeightOffset);
+        document
+            .querySelector("main")
+            .style.setProperty("--panel-height-offset", panelHeightOffset);
         window.scroll({
-            top: 130,
+            top: scrollAmount,
             behavior: "smooth",
         });
         document.querySelector(".resume").style.animation = "fade-in 1s";
@@ -90,7 +118,7 @@ document.querySelector(".nav-resume").addEventListener("click", (e) => {
             .querySelector("main")
             .style.setProperty("--main-bg-opacity", 1);
         window.scroll({
-            top: -130,
+            top: -scrollAmount,
             behavior: "smooth",
         });
         document.querySelector(".resume").style.animation = "fade-out 1s";
@@ -99,6 +127,9 @@ document.querySelector(".nav-resume").addEventListener("click", (e) => {
             document
                 .querySelector("main")
                 .style.setProperty("--height-offset", "0px");
+            document
+                .querySelector("main")
+                .style.setProperty("--panel-height-offset", "0px");
         }, 900);
     }
 });

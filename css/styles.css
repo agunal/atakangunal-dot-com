@@ -27,19 +27,19 @@ a.regular-link {
 }
 
 body {
+  --screen-size: big;
   /* background-color: #26272c; */
   background-color: aliceblue;
   margin: 0;
-  /* display: flex;
-  justify-content: center; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 main {
   --main-bg-opacity: 1;
-  --height-offset: 0px;
-  --main-height: calc(100% + var(--height-offset));
+  --main-height-offset: 0px;
+  --panel-height-offset: 0px;
+  --main-height: calc(100% + var(--main-height-offset));
 
   display: flex;
   flex-direction: column;
@@ -134,7 +134,8 @@ header h3 {
   --temp: 0;
   color: burlywood;
 }
-.city:hover::after {
+.city:hover::after,
+.city:focus::after {
   counter-reset: temp var(--temp);
   content: " " counter(temp) "\00b0""C";
   white-space: pre;
@@ -149,7 +150,7 @@ header h3 {
   gap: 0px;
   display: flex;
   /* flex-direction: column; */
-  height: calc(100vh - 200px + var(--height-offset));
+  height: calc(100vh - 200px + var(--panel-height-offset));
   position: sticky;
   top: 10px;
 }
@@ -298,9 +299,6 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-.work-info > * {
-  /* border: 1px solid black; */
-}
 .work-date-location {
   text-align: center;
 }
@@ -351,6 +349,9 @@ footer {
 }
 
 @media (max-width: 940px) {
+  body {
+    --screen-size: mid;
+  }
   header {
     width: calc(100vw - 10px);
     max-height: fit-content;
@@ -371,7 +372,7 @@ footer {
   }
   .panel {
     flex-direction: column;
-    height: calc(100vh - 265px);
+    height: calc(100vh - 265px + var(--panel-height-offset));
     padding-bottom: 10px;
   }
   nav {
@@ -402,12 +403,16 @@ footer {
     width: calc(100vw - 20px);
   }
 }
+
 @media (max-width: 500px) {
+  body {
+    --screen-size: small;
+  }
   .name-title h1 {
     font-size: 40px;
   }
   .panel {
-    height: calc(100vh - 242px);
+    height: calc(100vh - 242px + var(--panel-height-offset));
   }
   .resume {
     padding: 10px;

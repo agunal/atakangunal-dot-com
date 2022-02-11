@@ -19,12 +19,23 @@ emailDiv.addEventListener("click", (e) => {
     emailDiv.focus();
 });
 
+fetch(
+    "http://www.7timer.info/bin/api.pl?lon=-118.24&lat=34.05&product=civillight&output=json"
+)
+    .then((res) => res.json())
+    .then((data) =>
+        data.dataseries[0].temp2m.max
+            ? document
+                  .querySelector(".city")
+                  .style.setProperty("--temp", data.dataseries[0].temp2m.max)
+            : document.querySelector(".city").style.setProperty("--temp", "")
+    );
+
 document.querySelectorAll(".commentary-item").forEach((ci) => {
     ci.querySelector("a").addEventListener("click", (e) => {
         e.preventDefault();
         const a = e.target;
         const bgColor = a.style.backgroundColor;
-        // a.style.filter = "invert(100%) sepia(0%) saturate(822%) hue-rotate(113deg) brightness(112%) contrast(101%)";
         a.style.backgroundColor =
             !bgColor || bgColor === "transparent" ? "#3b28cc40" : "transparent";
         const cDisplay = ci.nextElementSibling.style.display;
@@ -49,25 +60,45 @@ document.querySelectorAll(".headline").forEach((h) => {
 });
 
 // TODO - change opacity when resume is displayed
-document.querySelector(".resume").addEventListener("mouseenter", (e) => {
-    document.querySelector("main").style.setProperty("--main-bg-opacity", 0.8);
-});
-document.querySelector(".resume").addEventListener("mouseleave", (e) => {
-    document.querySelector("main").style.setProperty("--main-bg-opacity", 1);
-});
+// document.querySelector(".resume").addEventListener("mouseenter", (e) => {
+//     document.querySelector("main").style.setProperty("--main-bg-opacity", 0.9);
+// });
+// document.querySelector(".resume").addEventListener("mouseleave", (e) => {
+//     document.querySelector("main").style.setProperty("--main-bg-opacity", 1);
+// });
 
-//TODO - refactor fadein into its own func
+//TODO - refactor
 document.querySelector(".nav-resume").addEventListener("click", (e) => {
     e.preventDefault();
+
     const resumeDisp = document.querySelector(".resume").style.display;
     if (resumeDisp === "" || resumeDisp === "none") {
+        document
+            .querySelector("main")
+            .style.setProperty("--main-bg-opacity", 0.9);
+        document
+            .querySelector("main")
+            .style.setProperty("--height-offset", "130px");
+        window.scroll({
+            top: 130,
+            behavior: "smooth",
+        });
         document.querySelector(".resume").style.animation = "fade-in 1s";
         document.querySelector(".resume").style.display = "block";
     } else {
+        document
+            .querySelector("main")
+            .style.setProperty("--main-bg-opacity", 1);
+        window.scroll({
+            top: -130,
+            behavior: "smooth",
+        });
         document.querySelector(".resume").style.animation = "fade-out 1s";
-        setTimeout(
-            () => (document.querySelector(".resume").style.display = "none"),
-            1000
-        );
+        setTimeout(() => {
+            document.querySelector(".resume").style.display = "none";
+            document
+                .querySelector("main")
+                .style.setProperty("--height-offset", "0px");
+        }, 900);
     }
 });

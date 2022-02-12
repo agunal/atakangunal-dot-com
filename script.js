@@ -19,18 +19,6 @@ emailDiv.addEventListener("click", (e) => {
     emailDiv.focus();
 });
 
-fetch(
-    "http://www.7timer.info/bin/api.pl?lon=-118.24&lat=34.05&product=civillight&output=json"
-)
-    .then((res) => res.json())
-    .then((data) =>
-        data.dataseries[0].temp2m.max
-            ? document
-                  .querySelector(".city")
-                  .style.setProperty("--temp", data.dataseries[0].temp2m.max)
-            : document.querySelector(".city").style.setProperty("--temp", "")
-    );
-
 document.querySelectorAll(".commentary-item").forEach((ci) => {
     ci.querySelector("a").addEventListener("click", (e) => {
         e.preventDefault();

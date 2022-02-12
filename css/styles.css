@@ -9,11 +9,17 @@
 
 html {
   box-sizing: border-box;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 hr {
@@ -123,12 +129,17 @@ header h3 {
 }
 .city {
   --temp: 0;
-  color: burlywood;
+  --temp-content: " " "\2026";
+  color: rgb(222, 184, 135);
+}
+.city.loaded {
+  text-shadow: -0.5px 0.5px 2px rgba(222, 184, 135, 0.75);
+  counter-reset: temp var(--temp);
+  --temp-content: " " counter(temp) "\00b0""C";
 }
 .city:hover::after,
 .city:focus::after {
-  counter-reset: temp var(--temp);
-  content: " " counter(temp) "\00b0""C";
+  content: var(--temp-content);
   white-space: pre;
   font-size: 12px;
   position: absolute;

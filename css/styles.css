@@ -7,6 +7,8 @@
 #26272c wood
 */
 
+@import "toggle.css";
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -24,6 +26,10 @@ html {
 
 hr {
   border: 1px solid black;
+  margin-top: 0;
+}
+hr.dark {
+  border: 1px solid white;
   margin-top: 0;
 }
 a.regular-link {
@@ -45,6 +51,9 @@ main {
   --main-height-offset: 0px;
   --panel-height-offset: 0px;
   --main-height: calc(100% + var(--main-height-offset));
+  --bg-light: url("../images/atakanGunalOct6.jfif");
+  --bg-dark: url("../images/atakanGunalDarkMode.jpg");
+  --bg-image: var(--bg-light);
 
   display: flex;
   flex-direction: column;
@@ -62,7 +71,8 @@ main::before {
   height: var(--main-height);
   opacity: var(--main-bg-opacity);
 
-  background: url("../images/atakanGunalOct6.jfif") no-repeat fixed;
+  background: var(--bg-image) no-repeat fixed;
+  /* background: url("../images/atakanGunalDarkMode.jpg") no-repeat fixed; */
   background-size: cover;
   background-position: top 60% right 80%;
 }
@@ -201,11 +211,22 @@ nav {
 .nav-items li a:active {
   color: #3b28cc;
 }
+.nav-day-night {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+}
 .nav-resume {
   cursor: pointer;
 }
 
 .resume {
+  --bg-light: rgba(158, 196, 219, 0.856);
+  --bg-dark: rgba(6, 9, 10, 0.856);
+  --color-light: #333;
+  --color-dark: #dadce0;
+
   display: none;
   margin: 0 0 0 10px;
   padding: 20px;
@@ -214,10 +235,10 @@ nav {
   overflow: scroll;
   scroll-behavior: smooth;
   /* overscroll-behavior: none; */
-  background-color: rgba(158, 196, 219, 0.856);
+  background-color: var(--bg-light);
   border-radius: 10px;
   scrollbar-width: none;
-  color: #333;
+  color: var(--color-light);
 
   transition: display 1s;
 }
@@ -269,6 +290,13 @@ nav {
   text-indent: initial;
   border-inline-start: 1px solid black;
 }
+.commentary.dark {
+  border-inline-start: 1px solid white;
+}
+.commentary-icon.dark {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
 .work-experience-headline {
   margin-bottom: 5px;
 }
@@ -277,6 +305,9 @@ nav {
 }
 .work-item {
   border-bottom: 1px solid black;
+}
+.work-item.dark {
+  border-bottom: 1px solid white;
 }
 .work-item:last-child {
   border-bottom: none;

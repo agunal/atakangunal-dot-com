@@ -121,3 +121,42 @@ document.querySelector(".nav-resume").addEventListener("click", (e) => {
         }, 900);
     }
 });
+
+document.querySelector(".toggle__element").addEventListener("change", (e) => {
+    const checked = e.target.checked;
+    darkMode(checked);
+});
+
+const darkMode = function (checked) {
+    if (checked) {
+        document
+            .querySelector("main")
+            .style.setProperty("--bg-image", "var(--bg-dark");
+        document
+            .querySelector(".resume")
+            .style.setProperty("background-color", "var(--bg-dark");
+        document
+            .querySelector(".resume")
+            .style.setProperty("color", "var(--color-dark");
+        document
+            .querySelectorAll("hr, .work-item, .commentary, .commentary-icon")
+            .forEach((el) => {
+                el.classList.add("dark");
+            });
+    } else {
+        document
+            .querySelector("main")
+            .style.setProperty("--bg-image", "var(--bg-light");
+        document
+            .querySelector(".resume")
+            .style.setProperty("background-color", "var(--bg-light");
+        document
+            .querySelector(".resume")
+            .style.setProperty("color", "var(--color-light");
+        document
+            .querySelectorAll("hr, .work-item, .commentary, .commentary-icon")
+            .forEach((el) => {
+                el.classList.remove("dark");
+            });
+    }
+};

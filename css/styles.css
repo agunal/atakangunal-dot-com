@@ -152,7 +152,7 @@ header h3 {
   gap: 0px;
   display: flex;
   /* flex-direction: column; */
-  height: calc(100vh - 200px + var(--panel-height-offset));
+  height: calc(100vh - 185px + var(--panel-height-offset));
   position: sticky;
   top: 10px;
 }
@@ -320,12 +320,42 @@ nav {
 }
 
 footer {
-  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 45px;
   position: sticky;
   bottom: 0px;
   /* align-self: flex-end; */
   margin-top: auto;
   background-color: black;
+  color: white;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:visited {
+  color: inherit;
+}
+footer a:active {
+  color: #3b28cc;
+}
+footer a:hover {
+  text-shadow: -2px 2px 4px rgba(158, 196, 219, 0.856);
+}
+.license {
+  margin: 0;
+  flex: 0 1 auto;
+}
+.liam {
+  flex: 0 0 content;
+  flex-wrap: nowrap;
+}
+.links {
+  flex: 0 0 max-content;
+  flex-wrap: nowrap;
 }
 
 @keyframes fade-in {
@@ -370,7 +400,7 @@ footer {
   }
   .panel {
     flex-direction: column;
-    height: calc(100vh - 265px + var(--panel-height-offset));
+    height: calc(100vh - 250px + var(--panel-height-offset));
     padding-bottom: 10px;
   }
   nav {
@@ -410,9 +440,13 @@ footer {
     font-size: 40px;
   }
   .panel {
-    height: calc(100vh - 242px + var(--panel-height-offset));
+    height: calc(100vh - 227px + var(--panel-height-offset));
   }
   .resume {
     padding: 10px;
+  }
+  .license {
+    /* max-width: 120px; */
+    flex-basis: 120px;
   }
 }

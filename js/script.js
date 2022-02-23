@@ -83,41 +83,30 @@ document.querySelector(".nav-resume").addEventListener("click", (e) => {
             break;
     }
 
-    const resumeDisp = document.querySelector(".resume").style.display;
-    if (resumeDisp === "" || resumeDisp === "none") {
+    const resume = document.querySelector(".resume");
+    const main = document.querySelector("main");
+    if (resume.style.display === "" || resume.style.display === "none") {
         document.querySelector("nav").style.top = navTop;
-        document
-            .querySelector("main")
-            .style.setProperty("--main-bg-opacity", 0.9);
-        document
-            .querySelector("main")
-            .style.setProperty("--main-height-offset", mainHeightOffset);
-        document
-            .querySelector("main")
-            .style.setProperty("--panel-height-offset", panelHeightOffset);
+        main.style.setProperty("--main-bg-opacity", 0.8);
+        main.style.setProperty("--main-height-offset", mainHeightOffset);
+        main.style.setProperty("--panel-height-offset", panelHeightOffset);
         window.scroll({
             top: scrollAmount,
             behavior: "smooth",
         });
-        document.querySelector(".resume").style.animation = "fade-in 1s";
-        document.querySelector(".resume").style.display = "block";
+        resume.style.animation = "fade-in 1s";
+        resume.style.display = "block";
     } else {
-        document
-            .querySelector("main")
-            .style.setProperty("--main-bg-opacity", 1);
+        main.style.setProperty("--main-bg-opacity", 1);
         window.scroll({
             top: -scrollAmount,
             behavior: "smooth",
         });
-        document.querySelector(".resume").style.animation = "fade-out 1s";
+        resume.style.animation = "fade-out 1s";
         setTimeout(() => {
-            document.querySelector(".resume").style.display = "none";
-            document
-                .querySelector("main")
-                .style.setProperty("--main-height-offset", "0px");
-            document
-                .querySelector("main")
-                .style.setProperty("--panel-height-offset", "0px");
+            resume.style.display = "none";
+            main.style.setProperty("--main-height-offset", "0px");
+            main.style.setProperty("--panel-height-offset", "0px");
         }, 900);
     }
 });
@@ -128,34 +117,23 @@ document.querySelector(".toggle__element").addEventListener("change", (e) => {
 });
 
 const darkMode = function (checked) {
+    const main = document.querySelector("main");
+    const resume = document.querySelector(".resume");
+    const darkables = document.querySelectorAll(
+        "body, hr, .work-item, .commentary, .commentary-icon"
+    );
     if (checked) {
-        document
-            .querySelector("main")
-            .style.setProperty("--bg-image", "var(--bg-dark");
-        document
-            .querySelector(".resume")
-            .style.setProperty("background-color", "var(--bg-dark");
-        document
-            .querySelector(".resume")
-            .style.setProperty("color", "var(--color-dark");
-        document
-            .querySelectorAll("hr, .work-item, .commentary, .commentary-icon")
-            .forEach((el) => {
+        main.style.setProperty("--bg-image", "var(--bg-dark");
+        resume.style.setProperty("background-color", "var(--bg-dark");
+        resume.style.setProperty("color", "var(--color-dark");
+        darkables.forEach((el) => {
                 el.classList.add("dark");
             });
     } else {
-        document
-            .querySelector("main")
-            .style.setProperty("--bg-image", "var(--bg-light");
-        document
-            .querySelector(".resume")
-            .style.setProperty("background-color", "var(--bg-light");
-        document
-            .querySelector(".resume")
-            .style.setProperty("color", "var(--color-light");
-        document
-            .querySelectorAll("hr, .work-item, .commentary, .commentary-icon")
-            .forEach((el) => {
+        main.style.setProperty("--bg-image", "var(--bg-light");
+        resume.style.setProperty("background-color", "var(--bg-light");
+        resume.style.setProperty("color", "var(--color-light");
+        darkables.forEach((el) => {
                 el.classList.remove("dark");
             });
     }

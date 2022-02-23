@@ -39,12 +39,14 @@ a.regular-link {
 
 body {
   --screen-size: big;
-  /* background-color: #26272c; */
-  background-color: aliceblue;
+  background-color: paleturquoise;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+}
+body.dark {
+  background-color: #26272c;
 }
 main {
   --main-bg-opacity: 1;
@@ -190,8 +192,9 @@ nav {
 .nav-items {
   display: flex;
   flex-direction: column;
+  align-items: center;
   list-style-type: none;
-  padding-left: 10px;
+  padding-left: 0px;
   color: white;
 }
 .nav-items li {
@@ -210,12 +213,6 @@ nav {
 }
 .nav-items li a:active {
   color: #3b28cc;
-}
-.nav-day-night {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 10px;
 }
 .nav-resume {
   cursor: pointer;
@@ -379,6 +376,7 @@ footer a:hover {
 .license {
   margin: 0;
   flex: 0 1 auto;
+  font-size: 14px;
 }
 .liam {
   flex: 0 0 content;
